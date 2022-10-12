@@ -6,108 +6,77 @@ Coderhouse
 DataScience Proyect
 
 
-credit_card_churn.csv: Archivo con las base de datos  (Necesario para la ejecución del código)
+credit_card_churn.csv: file with database
 
 
-#Tema: Abandono de Clientes de tarjetas de Credito
-#Introducción
-#Las tarjetas de crédito son una buena fuente de ingresos para los bancos debido a los diferentes tipos de comisiones que cobran, como las tasas anuales, las de transferencia de saldo, las de adelanto de efectivo, las de retraso en los pagos y las de transacciones extranjeras, entre otras. Algunas comisiones se cobran a todos los usuarios, independientemente de su uso, mientras que otras se cobran en determinadas circunstancias.
+Introduction: Credit cards are a good source of income for banks due to the different types of fees they charge, such as annual fees, balance transfer fees, cash advance fees, late payment fees, and foreign transaction fees, among others.
 
-El hecho de que los clientes abandonen los servicios de las tarjetas de crédito supondría una pérdida para el banco, por lo que éste quiere analizar los datos de los clientes e identificar a los que abandonan los servicios de las tarjetas de crédito y las razones para ello, de modo que el banco pueda mejorar en esas áreas.
+Some fees are charged to all users, regardless of usage, while others are charged under certain circumstances.
 
-Un modelo de abandono de clientes es una representación matemática de cómo el abandono afecta a su negocio. Los cálculos de abandono de clientes se construyen a partir de los datos existentes (el número de clientes que abandonaron su servicio durante un periodo de tiempo determinado). Un modelo predictivo de cancelación de clientes extrapola estos datos para mostrar las tasas de cancelación de clientes potenciales en el futuro.
+Customers abandoning credit card services would be a loss to the bank, so the bank wants to analyze customer data and identify those who abandon credit card services and the reasons for doing so, so that the bank can improve in those areas.
 
-El churn (también conocido como deserción de clientes) es un problema para las empresas de suscripción. Cuando sus ingresos se basan en contratos mensuales o anuales recurrentes, cada cliente que se va hace mella en su flujo de caja. Unas altas tasas de retención son vitales para su supervivencia. ¿Y si le dijéramos que hay una forma de predecir, al menos hasta cierto punto, cómo y cuándo cancelarán sus clientes?
+A churn model is a mathematical representation of how churn affects your business. Churn calculations are built from existing data (the number of customers who abandoned your service during a given time period). A predictive churn model extrapolates this data to show churn rates of potential customers in the future.
 
-La creación de un modelo de predicción de bajas le ayudará a realizar cambios proactivos en sus esfuerzos de retención que reduzcan las tasas de bajas. Comprender el impacto de la pérdida de clientes en sus objetivos de ingresos actuales y hacer predicciones sobre cómo gestionar esos problemas en el futuro también le ayuda a frenar el flujo de clientes perdidos. Si no toma medidas contra la pérdida de clientes ahora, cualquier crecimiento de la empresa que experimente no será sostenible.
+Churn (also known as customer defection) is a problem for subscription companies. When your revenue is based on recurring monthly or annual contracts, every customer that leaves puts a dent in your cash flow. High retention rates are vital to your survival. What if we told you that there is a way to predict, at least to some extent, how and when your customers will cancel?
 
-Los perfiles completos de los clientes le ayudan a ver qué tipos de clientes están cancelando sus cuentas. Ahora es el momento de averiguar cómo y por qué se dan de baja. Hágase las siguientes preguntas para saber más sobre los puntos conflictivos de su producto y la experiencia del cliente que hacen que éste decida darse de baja.
+Creating a churn prediction model will help you make proactive changes to your retention efforts that reduce churn rates. Understanding the impact of churn on your current revenue goals and making predictions about how to manage those issues in the future also helps you stem the flow of lost customers. If you don't take action against churn now, any business growth you experience will not be sustainable.
 
-¿Qué es la pérdida de clientes?
-La pérdida de clientes (o desgaste de clientes) es la tendencia de los clientes a abandonar una marca y dejar de ser clientes de pago de una empresa determinada. El porcentaje de clientes que dejan de utilizar los productos o servicios de una empresa durante un periodo de tiempo determinado se denomina tasa de abandono de clientes (attrition). Una de las formas de calcular la tasa de abandono es dividir el número de clientes perdidos durante un intervalo de tiempo determinado entre el número de clientes adquiridos y, a continuación, multiplicar esa cifra por el 100%. Por ejemplo, si ha conseguido 150 clientes y ha perdido tres el mes pasado, su tasa de abandono mensual es del 2%.
+Comprehensive customer profiles help you see what types of customers are canceling their accounts. Now is the time to find out how and why they churn. Ask yourself the following questions to learn more about the pain points in your product and customer experience that cause customers to decide to churn.
 
-El índice de rotación es un indicador de salud para las empresas cuyos clientes están suscritos y pagan por los servicios de forma recurrente, por lo que un cliente permanece abierto a ofertas más interesantes o ventajosas. Además, cada vez que termina su compromiso actual, los clientes tienen la oportunidad de reconsiderar y elegir no continuar con la empresa. Por supuesto, una parte de la rotación natural es inevitable, y la cifra difiere de un sector a otro. Pero tener una cifra de churn más alta que esa es una señal definitiva de que una empresa está haciendo algo mal".
+What is churn? Customer churn (or customer attrition) is the tendency of customers to abandon a brand and stop being paying customers of a given company. The percentage of customers who stop using a company's products or services over a given period of time is called the customer churn rate (attrition). One way to calculate the attrition rate is to divide the number of customers lost during a given time interval by the number of customers acquired, and then multiply that figure by 100%. For example, if you have acquired 150 customers and lost three in the past month, your monthly churn rate is 2%.
 
-Hay muchas cosas que las marcas pueden hacer mal, desde una incorporación complicada en la que no se da a los clientes información fácil de entender sobre el uso del producto y sus capacidades, hasta una mala comunicación, por ejemplo, la falta de comentarios o el retraso en las respuestas a las consultas. Otra situación: Los clientes veteranos pueden sentirse poco apreciados porque no reciben tantas bonificaciones como los nuevos.
+The churn rate is a health indicator for companies whose customers are subscribed and pay for services on a recurring basis, so a customer remains open to more interesting or advantageous offers. In addition, each time their current engagement ends, customers have the opportunity to reconsider and choose not to continue with the company. Of course, some natural churn is inevitable, and the figure differs from industry to industry. But having a higher churn figure than that is a definite sign that a company is doing something wrong."
 
-#Objetivo
+There are many things brands can do wrong, from complicated onboarding where customers are not given easy-to-understand information about product usage and capabilities, to poor communication, e.g., lack of feedback or delayed responses to queries. Another situation: Long-time customers may feel unappreciated because they do not receive as many bonuses as new customers.
 
-Explorar y visualizar el conjunto de datos.
-Construir un modelo de clasificación para predecir si el cliente va a abandonar o no.
-Optimizar el modelo utilizando las técnicas adecuadas
-Generar un conjunto de ideas y recomendaciones que ayuden al banco   
+Objective Explore and visualize the data set. Build a classification model to predict whether or not the customer will drop out. Optimize the model using appropriate techniques Generate a set of ideas and recommendations to help the bank.
 
-#Problema
-¿Tienen los ingresos algún efecto sobre el abandono?
-¿Tiene el sexo alguna relación con el abandono?
-¿Cuáles son los signos de desgaste?
+Problem Does income have any effect on dropout? Does gender have any relationship with dropout? What are the signs of attrition?
 
+Members Martin Viera Matias Franco
 
-#Problemática
-Indicación de la fuente del dataset y los criterios de selección (Data Acquisition)
+Problem Indication of the source of the dataset and the selection criteria (Data Acquisition)
 
 Dataset https://www.kaggle.com/code/xavier14/predicting-churn-with-tree-based-models
 
-Criterios de selección: Para el presente trabajo se realizó una búsqueda de los dataset que realmente fuera de nuestro interés.
-Consideramos importante que los datos se adecuaran a los requerimientos en cuanto a calidad y cantidad para un mejor análisis, entre ellas que tenga una cantidad suficiente de variables numéricas y también categóricas, que no tenga o bien tenga una cantidad reducida de datos nulos.
+Data Dictionary CLIENTNUM: Client number. Unique identifier for the customer holding the account
 
-Nuestro dataset contiene el abandono de los clientes de las tarjetas de credito segun distintas variables.
+Attrition_Flag: Internal event (customer activity) variable - if the account is closed then "Attrited Customer" else "Existing Customer"
 
-Variables
-CLIENTNUM = Client number. Unique identifier for the customer holding the account
+Customer_Age: Age in Years
 
-Attrition_Flag = Internal event (customer activity) variable - if the account is closed then 1 else 0
+Gender: Gender of the account holder
 
-Customer_Age = Demographic variable - Customer's Age in Years
+Dependent_count: Number of dependents
 
-Gender = Demographic variable - M=Male, F=Female
+Education_Level: Educational Qualification of the account holder - Graduate, High School, Unknown, Uneducated, College(refers to a college student), Post-Graduate, Doctorate.
 
-Dependent_count = Demographic variable - Number of dependents
+Marital_Status: Marital Status of the account holder
 
-Education_Level = Demographic variable - Educational Qualification of the account holder (example: high school, college graduate, etc.)
+Income_Category: Annual Income Category of the account holder
 
-Marital_Status = Demographic variable - Married, Single, Divorced, Unknown
+Card_Category: Type of Card
 
-Income_Category = Demographic variable - Annual Income Category of the account holder (<  40K, 40K - 60K,  60K− 80K,  80K− 120K, $120K >)
+Months_on_book: Period of relationship with the bank
 
-Card_Category = Product Variable - Type of Card (Blue, Silver, Gold, Platinum)
+Total_Relationship_Count: Total no. of products held by the customer
 
-Months_on_book = Period of relationship with bank
+Months_Inactive_12_mon: No. of months inactive in the last 12 months
 
-Total_Relationship_Count = Total no. of products held by the customer
+Contacts_Count_12_mon: No. of Contacts between the customer and bank in the last 12 months
 
-Months_Inactive_12_mon = No. of months inactive in the last 12 months
+Credit_Limit: Credit Limit on the Credit Card
 
-Contacts_Count_12_mon = No. of Contacts in the last 12 months
+Total_Revolving_Bal: The balance that carries over from one month to the next is the revolving balance
 
-Credit_Limit = Credit Limit on the Credit Card
+Avg_Open_To_Buy: Open to Buy refers to the amount left on the credit card to use (Average of last 12 months)
 
-Total_Revolving_Bal = Total Revolving Balance on the Credit Card
+Total_Trans_Amt: Total Transaction Amount (Last 12 months)
 
-Avg_Open_To_Buy = Open to Buy Credit Line (Average of last 12 months)
+Total_Trans_Ct: Total Transaction Count (Last 12 months)
 
-Total_Amt_Chng_Q4_Q1 = Change in Transaction Amount (Q4 over Q1)
+Total_Ct_Chng_Q4_Q1: Ratio of the total transaction count in 4th quarter and the total transaction count in 1st quarter
 
-Total_Trans_Amt = Total Transaction Amount (Last 12 months)
+Total_Amt_Chng_Q4_Q1: Ratio of the total transaction amount in 4th quarter and the total transaction amount in 1st quarter
 
-Total_Trans_Ct = Total Transaction Count (Last 12 months)
-
-Total_Ct_Chng_Q4_Q1 = Change in Transaction Count (Q4 over Q1)
-
-Avg_Utilization_Ratio = Average Card Utilization Ratio
-
-#¿Qué es un saldo renovable(Revolving Balance)?
-
-Si no pagamos el saldo de la cuenta de crédito renovable en su totalidad cada mes, la parte no pagada se traslada al mes siguiente. A eso se le llama saldo renovable
-
-¿Qué es el saldo medio abierto para comprar( Average Open to buy)?
-
-El "Open to Buy" significa la cantidad que le queda a su tarjeta de crédito por utilizar. Esta columna representa la media de este valor en los últimos 12 meses.
-
-¿Qué es el Ratio de utilización media (Average utilization Ratio)?
-
-El Avg_Utilization_Ratio representa cuánto del crédito disponible gastó el cliente. Esto es útil para calcular la puntuación de crédito.
-
-Relación entre Avg_Open_To_Buy, Credit_Limit y Avg_Utilization_Ratio:
-
-( Avg_Open_To_Buy / Credit_Limit ) + Avg_Utilization_Ratio = 1
+Avg_Utilization_Ratio: Represents how much of the available credit the customer spent
